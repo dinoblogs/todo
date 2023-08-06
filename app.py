@@ -13,7 +13,8 @@ def index():
     
 
 
-@app.route('/login/',methods=['POST'])
+@app.route('/login/',methods=['POST','GET'])
+@app.route('/login',methods=['POST','GET'])
 def login():
     if 'username' in session:
         if session['username'] == 'kanha' and session['password'] == 'kali':
