@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    
+<nav class="bg-white border-gray-200 dark:bg-gray-900">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <a href="/" class="flex items-center">
+          <img src="https://cdn-icons-png.flaticon.com/512/6356/6356659.png" class="h-8 mr-3" alt="Flowbite Logo" id="logo" />
+          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">kanha Machine</span>
+      </a>
+      <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+          </svg>
+      </button>
+      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+        <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <li>
+            <a href="/" class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Home</a>
+          </li>
+          <li>
+            <a href="/logout" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Logout</a>
+          </li>
+       
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+    <!-- component -->
+<div class="h-100 w-full flex items-center justify-center bg-teal-lightest font-sans">
+	<div class="bg-white rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
+        <div class="mb-4">
+            <h1 class="text-grey-darkest">My Notes</h1>
+            <div class="flex mt-4">
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker" placeholder="Add Todo">
+                <button class="flex-no-shrink p-2 border-2 rounded text-teal border-teal hover:text-white hover:bg-teal">Add</button>
+            </div>
+        </div>
+        <div>
+            <div class="flex mb-4 items-center">
+                <p class="w-full text-grey-darkest">2a01:4f8:202:1002:1111:1111:1fc6:0001</p>
+                <button class="flex-no-shrink p-2 ml-4 mr-2 border-2 rounded hover:text-white text-green border-green hover:bg-green">Done</button>
+                <button class="flex-no-shrink p-2 ml-2 border-2 rounded text-red border-red hover:text-white hover:bg-red">Remove</button>
+            </div>
+            <div class="flex mb-4 items-center">
+                <p class="w-full text-grey-darkest">Add another component to Tailwind Components</p>
+                <button class="flex-no-shrink p-2 ml-4 mr-2 border-2 rounded hover:text-white text-green border-green hover:bg-green">Done</button>
+                <button class="flex-no-shrink p-2 ml-2 border-2 rounded text-red border-red hover:text-white hover:bg-red">Remove</button>
+            </div>
+       
+        </div>
+    </div>
+</div>
+<button onclick="window.location = 'https://ssh.hax.co.id/'" class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+  <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+      Visit
+  </span>
+</button>
+<iframe src="https://ssh.hax.co.id/" style="width: 100%;height: 8cm;" frameborder="0"></iframe>
+<script>
+    m = `https://static-00.iconduck.com/assets.00/distributor-logo-kali-linux-icon-2048x2005-dki611fk.png`
+    m2 = `https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Kali-dragon-icon.svg/2048px-Kali-dragon-icon.svg.png`
+    m3 = `https://seeklogo.com/images/K/kali-protectives-logo-30CF4C40A6-seeklogo.com.png`
+    m4 = `https://www.kali.org/images/tool-logo-powershell-empire.svg`
+    // Sample list of strings
+    const strings = [m, m2, m3, m4];
+
+    // Function to choose a random string from the list
+    function getRandomString(list) {
+        const randomIndex = Math.floor(Math.random() * list.length);
+        return list[randomIndex];
+
+    }
+
+    // Call the function to get a random string
+    const randomString = getRandomString(strings);
+    document.getElementById('logo').setAttribute('src', randomString)
+
+</script>
+</body>
+</html>

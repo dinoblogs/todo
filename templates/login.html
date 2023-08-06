@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login To Machine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Droid+Sans);
+
+        .loader {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: url('http://www.downgraf.com/wp-content/uploads/2014/09/01-progress.gif?e44397') 50% 50% no-repeat rgb(249, 249, 249);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loader"></div>
+
+    <!-- component -->
+    <div class="flex h-screen w-full items-center justify-center bg-gray-900 bg-cover bg-no-repeat"
+        style="background-image:url('https://images.unsplash.com/photo-1499123785106-343e69e68db1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1748&q=80')">
+        <div class="rounded-xl bg-gray-800 bg-opacity-50 px-16 py-10 shadow-lg backdrop-blur-md max-sm:px-8">
+            <div class="text-white">
+                <div class="mb-8 flex flex-col items-center">
+                    <img id="logo" width="150" alt="" srcset="" />
+                    <h1 class="mb-2 text-2xl">Kali Machine</h1>
+                    <span class="text-gray-300">Enter Login Details</span>
+                </div>
+                <form action="/login/" method="post">
+                    <div class="mb-4 text-lg">
+                        <input
+                            class="rounded-3xl border-none bg-yellow-400 bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md"
+                            type="text" name="username" placeholder="username" />
+                    </div>
+
+                    <div class="mb-4 text-lg">
+                        <input
+                            class="rounded-3xl border-none bg-yellow-400 bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md"
+                            type="Password" name="password" placeholder="*********" />
+                    </div>
+                    <p style="text-align: center;color: rgb(158, 172, 255);">{{error}}</p>
+                    <div class="mt-8 flex justify-center text-lg text-black">
+                        <button type="submit"
+                            class="rounded-3xl bg-yellow-400 bg-opacity-50 px-10 py-2 text-white shadow-xl backdrop-blur-md transition-colors duration-300 hover:bg-yellow-600">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        m = `https://static-00.iconduck.com/assets.00/distributor-logo-kali-linux-icon-2048x2005-dki611fk.png`
+        m2 = `https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Kali-dragon-icon.svg/2048px-Kali-dragon-icon.svg.png`
+        m3 = `https://seeklogo.com/images/K/kali-protectives-logo-30CF4C40A6-seeklogo.com.png`
+        m4 = `https://www.kali.org/images/tool-logo-powershell-empire.svg`
+        // Sample list of strings
+        const strings = [m, m2, m3, m4];
+
+        // Function to choose a random string from the list
+        function getRandomString(list) {
+            const randomIndex = Math.floor(Math.random() * list.length);
+            return list[randomIndex];
+
+        }
+
+        // Call the function to get a random string
+        const randomString = getRandomString(strings);
+        document.getElementById('logo').setAttribute('src', randomString)
+
+    </script>
+    <script>
+        window.addEventListener('load', function () {
+            // Get the loader element
+            const loader = document.querySelector('.loader');
+
+            // Fade out the loader after 3000 milliseconds (3 seconds)
+            setTimeout(function () {
+                loader.style.opacity = '0';
+                // Optionally, you can hide the loader element after fading out
+                setTimeout(function () {
+                    loader.style.display = 'none';
+                }, 1000); // Hide the loader after 1 second (adjust as needed)
+            }, 3000); // Fade out the loader after 3 seconds (adjust as needed)
+        });
+
+
+        function setFavicon(url) {
+            const head = document.head;
+            const existingFavicon = document.querySelector('link[rel="icon"]');
+
+            // If a favicon link element already exists, remove it
+            if (existingFavicon) {
+                head.removeChild(existingFavicon);
+            }
+
+            // Create a new link element for the favicon
+            const faviconLink = document.createElement('link');
+            faviconLink.rel = 'icon';
+            faviconLink.href = url;
+
+            // Append the new link element to the head
+            head.appendChild(faviconLink);
+        }
+        setFavicon(randomString);
+    </script>
+</body>
+
+</html>
